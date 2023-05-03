@@ -1,23 +1,22 @@
-import { createContext } from 'react';
-import AccordionHeader from './AccordionHeader';
-import AccordionBody from './AccordionBody';
+import React, { FC, createContext } from 'react';
 
 import {
   useAccordion,
   AccordionArgs,
 } from '../../hooks/accordion/accordionHooks';
 
+interface AccordionProps {
+  children: React.ReactNode;
+}
+
 export const AccordionContext = createContext<AccordionArgs | null>(null);
 
-const Accordion = () => {
+const Accordion: FC<AccordionProps> = ({ children }) => {
   const value = useAccordion();
 
   return (
     <AccordionContext.Provider value={value}>
-      <div id="Accordion-item">
-        <AccordionHeader />
-        <AccordionBody />
-      </div>
+      {children}
     </AccordionContext.Provider>
   );
 };
