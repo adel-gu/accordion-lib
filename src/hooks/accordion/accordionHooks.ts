@@ -1,16 +1,16 @@
 import { useState } from 'react';
 
-interface ToggleHook {
-  toggle: boolean;
+export interface AccordionArgs {
+  isToggle: boolean;
   handleToggle: () => void;
 }
 
-export const useToggle = (): ToggleHook => {
-  const [toggle, setToggle] = useState(false);
+export const useAccordion = (): AccordionArgs => {
+  const [isToggle, setToggle] = useState(false);
 
   const handleToggle = () => {
-    setToggle((prevToggle) => !prevToggle);
+    setToggle((prevIsToggle) => !prevIsToggle);
   };
 
-  return { toggle, handleToggle };
+  return { isToggle, handleToggle };
 };
