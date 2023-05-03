@@ -1,21 +1,24 @@
-import React, { useState } from 'react';
+import { createContext } from 'react';
+import AccordionHeader from './AccordionHeader';
+import AccordionBody from './AccordionBody';
+
+import {
+  useAccordion,
+  AccordionArgs,
+} from '../../hooks/accordion/accordionHooks';
+
+export const AccordionContext = createContext<AccordionArgs | null>(null);
 
 const Accordion = () => {
-  const [expand, setExpand] = useState(false);
-
-  const toggleExpand = () => {
-    setExpand((prevExapnd) => !prevExapnd);
-  };
+  const value = useAccordion();
 
   return (
-    <div id="Accordion-item">
-      <div id="Accordion-Header">
-        <button onClick={toggleExpand}>
-          This is Accordion Tile <span>{expand ? '+' : '-'}</span>
-        </button>
-        {expand && <div>This is Accordion description</div>}
+    <AccordionContext.Provider value={value}>
+      <div id="Accordion-item">
+        <AccordionHeader />
+        <AccordionBody />
       </div>
-    </div>
+    </AccordionContext.Provider>
   );
 };
 
