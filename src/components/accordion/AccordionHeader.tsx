@@ -1,12 +1,16 @@
-import { useContext } from 'react';
+import { FC, useContext } from 'react';
 import { AccordionContext } from './Accordion';
 
-const AccordionHeader = () => {
+interface AccordionHeaderProps {
+  children: string;
+}
+
+const AccordionHeader: FC<AccordionHeaderProps> = ({ children }) => {
   const { isToggle, handleToggle } = useContext(AccordionContext)!;
   return (
     <div id="Accordion-Header">
       <button onClick={handleToggle}>
-        This is Accordion Tile <span>{isToggle ? '+' : '-'}</span>
+        {children} <span>{isToggle ? '+' : '-'}</span>
       </button>
     </div>
   );
