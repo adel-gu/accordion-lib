@@ -1,12 +1,12 @@
-import React from 'react';
-import { useToggle } from '../../hooks/accordion/accordionHooks';
+import { useContext } from 'react';
+import { AccordionContext } from './Accordion';
 
 const AccordionHeader = () => {
-  const { toggle: expand, handleToggle: toggleExpand } = useToggle();
+  const { isToggle, handleToggle } = useContext(AccordionContext)!;
   return (
     <div id="Accordion-Header">
-      <button onClick={toggleExpand}>
-        This is Accordion Tile <span>{expand ? '+' : '-'}</span>
+      <button onClick={handleToggle}>
+        This is Accordion Tile <span>{isToggle ? '+' : '-'}</span>
       </button>
     </div>
   );
