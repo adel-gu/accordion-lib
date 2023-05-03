@@ -10,7 +10,7 @@ const AccordionHeader: FC<AccordionHeaderProps> = ({ children }) => {
   return (
     <div id="Accordion-Header">
       <button onClick={handleToggle}>
-        {children} <span>{isToggle ? '+' : '-'}</span>
+        {children} <span>{isToggle ? '-' : '+'}</span>
       </button>
     </div>
   );
