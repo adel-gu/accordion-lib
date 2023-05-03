@@ -1,8 +1,10 @@
-import { FC, HtmlHTMLAttributes } from 'react';
+import { FC } from 'react';
 
-interface AccordionItemProps extends HtmlHTMLAttributes<HTMLDivElement> {}
+interface AccordionItemProps {
+  children: React.ReactNode;
+}
 
-const AccordionItem: FC<AccordionItemProps> = ({ children, ...props }) => {
+const AccordionItem: FC<AccordionItemProps> = ({ children }) => {
   return (
     <div id="Accordion-item" style={{ border: '1px solid red' }}>
       {children}
