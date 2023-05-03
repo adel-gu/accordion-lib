@@ -1,13 +1,13 @@
-import { useContext } from 'react';
+import { FC, useContext } from 'react';
 import { AccordionContext } from './Accordion';
 
-const AccordionBody = () => {
+interface AccordionBodyProps {
+  children: string;
+}
+
+const AccordionBody: FC<AccordionBodyProps> = ({ children }) => {
   const { isToggle } = useContext(AccordionContext)!;
-  return (
-    <div id="Accordion-body">
-      {isToggle && <div>This is Accordion description</div>}
-    </div>
-  );
+  return <div id="Accordion-body">{isToggle && <div>{children}</div>}</div>;
 };
 
 export default AccordionBody;
