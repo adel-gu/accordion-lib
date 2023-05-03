@@ -5,11 +5,7 @@ interface AccordionItemProps {
 }
 
 const AccordionItem: FC<AccordionItemProps> = ({ children }) => {
-  return (
-    <div id="Accordion-item" style={{ border: '1px solid red' }}>
-      {children}
-    </div>
-  );
+  return <div id="Accordion-item">{children}</div>;
 };
 
 export default AccordionItem;
