@@ -1,15 +1,12 @@
 import React, { FC, createContext } from 'react';
-
-import {
-  useAccordion,
-  AccordionArgs,
-} from '../../hooks/accordion/accordionHooks';
+import { AccordionStatus } from '../../types';
+import { useAccordion } from '../../hooks/accordion';
 
 interface AccordionProps {
   children: React.ReactNode;
 }
 
-export const AccordionContext = createContext<AccordionArgs | null>(null);
+export const AccordionContext = createContext<AccordionStatus | null>(null);
 
 const Accordion: FC<AccordionProps> = ({ children }) => {
   const value = useAccordion();
