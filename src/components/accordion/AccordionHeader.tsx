@@ -3,9 +3,9 @@ import { AccordionContext } from './Accordion';
 import { BiChevronUp, BiChevronDown } from 'react-icons/bi';
 
 interface AccordionHeaderProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  titleIcon: React.ReactNode;
-  closeIcon: React.ReactNode;
-  openIcon: React.ReactNode;
+  titleIcon?: React.ReactNode;
+  closeIcon?: React.ReactNode;
+  openIcon?: React.ReactNode;
 }
 
 const AccordionHeader: FC<AccordionHeaderProps> = ({
@@ -17,14 +17,17 @@ const AccordionHeader: FC<AccordionHeaderProps> = ({
 }) => {
   const { isToggle, handleToggle } = useContext(AccordionContext)!;
   return (
-    <div id="Accordion-Header">
-      <button onClick={handleToggle}>
-        {children}{' '}
+    <button onClick={handleToggle}>
+      <div>
+        {titleIcon}
+        {children}
+      </div>
+      <div>
         {isToggle
           ? closeIcon || <BiChevronUp />
           : openIcon || <BiChevronDown />}
-      </button>
-    </div>
+      </div>
+    </button>
   );
 };
 
