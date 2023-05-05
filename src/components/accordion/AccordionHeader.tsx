@@ -15,13 +15,17 @@ const AccordionHeader: FC<AccordionHeaderProps> = ({
   openIcon,
   className,
   bg,
+  bgToggle,
   ...props
 }) => {
   const { isToggle, handleToggle } = useContext(AccordionContext)!;
+  bgToggle = isToggle ? bgToggle : null;
   return (
     <button
       onClick={handleToggle}
-      className={headerClassesOptim(AccordionHeaderClasses({ bg, className }))}
+      className={headerClassesOptim(
+        AccordionHeaderClasses({ bg, bgToggle, className }),
+      )}
       {...props}
     >
       <div className="flex items-center">
