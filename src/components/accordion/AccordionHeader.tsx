@@ -1,12 +1,7 @@
-import React, { ButtonHTMLAttributes, FC, useContext } from 'react';
-import { AccordionContext } from './Accordion';
+import React, { FC, useContext } from 'react';
+import { AccordionContext } from '../../contexts/accordion';
+import { AccordionHeaderProps } from '../../types';
 import { BiChevronUp, BiChevronDown } from 'react-icons/bi';
-
-interface AccordionHeaderProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  titleIcon?: React.ReactNode;
-  closeIcon?: React.ReactNode;
-  openIcon?: React.ReactNode;
-}
 
 const AccordionHeader: FC<AccordionHeaderProps> = ({
   children,

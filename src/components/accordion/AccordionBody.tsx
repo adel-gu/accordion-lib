@@ -1,9 +1,6 @@
 import { FC, useContext } from 'react';
-import { AccordionContext } from './Accordion';
-
-interface AccordionBodyProps {
-  children: string;
-}
+import { AccordionBodyProps } from '../../types';
+import { AccordionContext } from '../../contexts/accordion';
 
 const AccordionBody: FC<AccordionBodyProps> = ({ children }) => {
   const { isToggle } = useContext(AccordionContext)!;
