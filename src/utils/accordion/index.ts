@@ -14,9 +14,13 @@ const AccordionHeaderClasses = cva(
         dark: 'dark',
         light: 'light',
       },
+      bgToggle: {
+        primary: 'bg-blue-100',
+      },
     },
     defaultVariants: {
       bg: 'dark',
+      bgToggle: 'primary',
     },
   },
 );
