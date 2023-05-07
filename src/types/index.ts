@@ -3,6 +3,7 @@ import { VariantProps } from 'class-variance-authority';
 import {
   AccordionClasses,
   AccordionHeaderClasses,
+  AccordionBodyClasses,
   AccordionItemClasses,
 } from '../utils/accordion';
 
@@ -28,7 +29,9 @@ interface AccordionHeaderProps
   openIcon?: React.ReactNode;
 }
 
-interface AccordionBodyProps extends HtmlHTMLAttributes<HTMLDivElement> {}
+interface AccordionBodyProps
+  extends HtmlHTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof AccordionBodyClasses> {}
 // ! |================= End Accordion types ===============|
 
 export type {
