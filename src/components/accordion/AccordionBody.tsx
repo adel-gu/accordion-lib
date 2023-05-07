@@ -20,6 +20,7 @@ const AccordionBody: FC<AccordionBodyProps> = ({
           AccordionBodyClasses({ className }),
           `${isToggle && 'grid-rows-[1fr]'}`,
         )}
+        {...props}
       >
         <div className={`overflow-hidden`}>
           <p className="p-3">{children}</p>
