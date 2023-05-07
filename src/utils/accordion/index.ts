@@ -17,7 +17,7 @@ const AccordionHeaderClasses = cva(
       bg: {},
       bgToggle: {
         primary:
-          'transition ease-in-out duration-300 bg-gray-100 text-gray-500',
+          'transition-all ease-in-out duration-500 bg-gray-100 text-gray-500',
       },
     },
     defaultVariants: {
