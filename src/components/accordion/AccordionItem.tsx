@@ -1,6 +1,9 @@
-import { FC, useContext } from 'react';
+import { FC } from 'react';
 import { AccordionItemProps } from '../../types';
-import { accordionClassesOptim } from '../../utils/accordion';
+import {
+  accordionClassesOptim,
+  AccordionItemClasses,
+} from '../../utils/accordion';
 import { AccordionContext } from '../../contexts/accordion';
 import { useAccordion } from '../../hooks/accordion';
 
@@ -12,7 +15,10 @@ const AccordionItem: FC<AccordionItemProps> = ({
   const value = useAccordion();
   return (
     <AccordionContext.Provider value={value}>
-      <div className={accordionClassesOptim('border ', className)} {...props}>
+      <div
+        className={accordionClassesOptim(AccordionItemClasses({ className }))}
+        {...props}
+      >
         {children}
       </div>
     </AccordionContext.Provider>
