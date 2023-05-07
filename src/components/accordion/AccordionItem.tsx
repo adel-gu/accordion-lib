@@ -1,11 +1,25 @@
 import { FC } from 'react';
+import { AccordionItemProps } from 'types/accordion';
+import { accordionClassesOptim, AccordionItemClasses } from 'utils/accordion';
+import { AccordionContext } from 'contexts/accordion';
+import { useAccordion } from 'hooks/accordion';
 
-interface AccordionItemProps {
-  children: React.ReactNode;
-}
-
-const AccordionItem: FC<AccordionItemProps> = ({ children }) => {
-  return <div id="Accordion-item">{children}</div>;
+const AccordionItem: FC<AccordionItemProps> = ({
+  children,
+  className,
+  ...props
+}) => {
+  const value = useAccordion();
+  return (
+    <AccordionContext.Provider value={value}>
+      <div
+        className={accordionClassesOptim(AccordionItemClasses({ className }))}
+        {...props}
+      >
+        {children}
+      </div>
+    </AccordionContext.Provider>
+  );
 };
 
-export default AccordionItem;
+export { AccordionItem };

@@ -1,24 +1,23 @@
-import React, { FC, createContext } from 'react';
+import { FC } from 'react';
+import { AccordionProps } from 'types/accordion';
+import { AccordionClasses, accordionClassesOptim } from 'utils/accordion';
+import { AccordionItem } from './AccordionItem';
+import { AccordionHeader } from './AccordionHeader';
+import { AccordionBody } from './AccordionBody';
 
-import {
-  useAccordion,
-  AccordionArgs,
-} from '../../hooks/accordion/accordionHooks';
-
-interface AccordionProps {
-  children: React.ReactNode;
-}
-
-export const AccordionContext = createContext<AccordionArgs | null>(null);
-
-const Accordion: FC<AccordionProps> = ({ children }) => {
-  const value = useAccordion();
-
+const Accordion: FC<AccordionProps> = ({ children, className, ...props }) => {
   return (
-    <AccordionContext.Provider value={value}>
+    <div
+      className={accordionClassesOptim(AccordionClasses({ className }))}
+      {...props}
+    >
       {children}
-    </AccordionContext.Provider>
+    </div>
   );
 };
 
-export default Accordion;
+export default Object.assign(Accordion, {
+  Item: AccordionItem,
+  Header: AccordionHeader,
+  Body: AccordionBody,
+});

@@ -1,19 +1,43 @@
-import { FC, useContext } from 'react';
-import { AccordionContext } from './Accordion';
+import React, { FC, useContext } from 'react';
+import { AccordionContext } from 'contexts/accordion';
+import { AccordionHeaderProps } from 'types/accordion';
+import { BsChevronUp, BsChevronDown } from 'react-icons/bs';
 
-interface AccordionHeaderProps {
-  children: string;
-}
+import { AccordionHeaderClasses, accordionClassesOptim } from 'utils/accordion';
 
-const AccordionHeader: FC<AccordionHeaderProps> = ({ children }) => {
+const AccordionHeader: FC<AccordionHeaderProps> = ({
+  children,
+  titleIcon,
+  closeIcon,
+  openIcon,
+  className,
+  bg,
+  bgToggle,
+  ...props
+}) => {
   const { isToggle, handleToggle } = useContext(AccordionContext)!;
+  bgToggle = isToggle ? bgToggle : null;
   return (
-    <div id="Accordion-Header">
-      <button onClick={handleToggle}>
-        {children} <span>{isToggle ? '-' : '+'}</span>
+    <h2>
+      <button
+        onClick={handleToggle}
+        className={accordionClassesOptim(
+          AccordionHeaderClasses({ bg, bgToggle, className }),
+        )}
+        {...props}
+      >
+        <div className="flex items-center">
+          {titleIcon && <span className="mr-2">{titleIcon}</span>}
+          <span>{children}</span>
+        </div>
+        <div>
+          {isToggle
+            ? closeIcon || <BsChevronUp />
+            : openIcon || <BsChevronDown />}
+        </div>
       </button>
-    </div>
+    </h2>
   );
 };
 
-export default AccordionHeader;
+export { AccordionHeader };

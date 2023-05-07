@@ -1,11 +1,7 @@
 import { useState } from 'react';
+import { AccordionStatus } from 'types/accordion';
 
-export interface AccordionArgs {
-  isToggle: boolean;
-  handleToggle: () => void;
-}
-
-export const useAccordion = (): AccordionArgs => {
+export const useAccordion = (): AccordionStatus => {
   const [isToggle, setToggle] = useState(false);
 
   const handleToggle = () => {
