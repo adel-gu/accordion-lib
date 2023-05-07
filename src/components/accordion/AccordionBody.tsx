@@ -1,10 +1,32 @@
 import { FC, useContext } from 'react';
 import { AccordionBodyProps } from '../../types';
 import { AccordionContext } from '../../contexts/accordion';
+import {
+  AccordionBodyClasses,
+  accordionClassesOptim,
+} from '../../utils/accordion';
 
-const AccordionBody: FC<AccordionBodyProps> = ({ children }) => {
+const AccordionBody: FC<AccordionBodyProps> = ({
+  children,
+  className,
+  ...props
+}) => {
   const { isToggle } = useContext(AccordionContext)!;
-  return <div id="Accordion-body">{isToggle && <div>{children}</div>}</div>;
+
+  return (
+    <>
+      <div
+        className={accordionClassesOptim(
+          AccordionBodyClasses({ className }),
+          `${isToggle && 'grid-rows-[1fr]'}`,
+        )}
+      >
+        <div className={`overflow-hidden`}>
+          <p className="p-3">{children}</p>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default AccordionBody;
