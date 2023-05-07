@@ -26,9 +26,14 @@ const AccordionHeaderClasses = cva(
   },
 );
 
+const AccordionBodyClasses = cva(
+  'grid grid-rows-[0fr] transition-all ease-in-out duration-500',
+);
+
 export {
   AccordionClasses,
   AccordionItemClasses,
   AccordionHeaderClasses,
+  AccordionBodyClasses,
   accordionClassesOptim,
 };
