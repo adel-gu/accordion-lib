@@ -1,20 +1,24 @@
-import { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, HtmlHTMLAttributes } from 'react';
 import { VariantProps } from 'class-variance-authority';
-import { AccordionHeaderClasses } from '../utils/accordion';
+import {
+  AccordionClasses,
+  AccordionHeaderClasses,
+  AccordionItemClasses,
+} from '../utils/accordion';
 
 // ! |====================    Accordion Types   ====================|
 interface AccordionStatus {
-  isToggle: boolean;
-  handleToggle: () => void;
+  isToggle?: boolean;
+  handleToggle?: () => void;
 }
 
-interface AccordionProps {
-  children: React.ReactNode;
-}
+interface AccordionProps
+  extends HtmlHTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof AccordionClasses> {}
 
-interface AccordionItemProps {
-  children: React.ReactNode;
-}
+interface AccordionItemProps
+  extends HtmlHTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof AccordionItemClasses> {}
 
 interface AccordionHeaderProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
@@ -24,9 +28,7 @@ interface AccordionHeaderProps
   openIcon?: React.ReactNode;
 }
 
-interface AccordionBodyProps {
-  children: string;
-}
+interface AccordionBodyProps extends HtmlHTMLAttributes<HTMLDivElement> {}
 // ! |================= End Accordion types ===============|
 
 export type {
