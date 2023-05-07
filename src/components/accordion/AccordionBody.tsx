@@ -1,10 +1,7 @@
 import { FC, useContext } from 'react';
-import { AccordionBodyProps } from '../../types';
-import { AccordionContext } from '../../contexts/accordion';
-import {
-  AccordionBodyClasses,
-  accordionClassesOptim,
-} from '../../utils/accordion';
+import { AccordionBodyProps } from 'types/accordion';
+import { AccordionContext } from 'contexts/accordion';
+import { AccordionBodyClasses, accordionClassesOptim } from 'utils/accordion';
 
 const AccordionBody: FC<AccordionBodyProps> = ({
   children,
@@ -30,4 +27,4 @@ const AccordionBody: FC<AccordionBodyProps> = ({
   );
 };
 
-export default AccordionBody;
+export { AccordionBody };

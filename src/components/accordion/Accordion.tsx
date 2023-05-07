@@ -1,6 +1,9 @@
 import { FC } from 'react';
-import { AccordionProps } from '../../types';
-import { AccordionClasses, accordionClassesOptim } from '../../utils/accordion';
+import { AccordionProps } from 'types/accordion';
+import { AccordionClasses, accordionClassesOptim } from 'utils/accordion';
+import { AccordionItem } from './AccordionItem';
+import { AccordionHeader } from './AccordionHeader';
+import { AccordionBody } from './AccordionBody';
 
 const Accordion: FC<AccordionProps> = ({ children, className, ...props }) => {
   return (
@@ -13,4 +16,8 @@ const Accordion: FC<AccordionProps> = ({ children, className, ...props }) => {
   );
 };
 
-export default Accordion;
+export default Object.assign(Accordion, {
+  Item: AccordionItem,
+  Header: AccordionHeader,
+  Body: AccordionBody,
+});

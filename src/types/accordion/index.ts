@@ -5,7 +5,7 @@ import {
   AccordionHeaderClasses,
   AccordionBodyClasses,
   AccordionItemClasses,
-} from '../utils/accordion';
+} from 'utils/accordion';
 
 // ! |====================    Accordion Types   ====================|
 interface AccordionStatus {

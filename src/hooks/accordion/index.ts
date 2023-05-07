@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AccordionStatus } from '../../types';
+import { AccordionStatus } from 'types/accordion';
 
 export const useAccordion = (): AccordionStatus => {
   const [isToggle, setToggle] = useState(false);

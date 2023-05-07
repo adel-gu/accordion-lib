@@ -1,12 +1,9 @@
 import React, { FC, useContext } from 'react';
-import { AccordionContext } from '../../contexts/accordion';
-import { AccordionHeaderProps } from '../../types';
+import { AccordionContext } from 'contexts/accordion';
+import { AccordionHeaderProps } from 'types/accordion';
 import { BsChevronUp, BsChevronDown } from 'react-icons/bs';
 
-import {
-  AccordionHeaderClasses,
-  accordionClassesOptim,
-} from '../../utils/accordion';
+import { AccordionHeaderClasses, accordionClassesOptim } from 'utils/accordion';
 
 const AccordionHeader: FC<AccordionHeaderProps> = ({
   children,
@@ -43,4 +40,4 @@ const AccordionHeader: FC<AccordionHeaderProps> = ({
   );
 };
 
-export default AccordionHeader;
+export { AccordionHeader };
