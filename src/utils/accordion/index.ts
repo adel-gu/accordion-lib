@@ -2,27 +2,33 @@ import { cva } from 'class-variance-authority';
 import { clsx, ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
-const headerClassesOptim = (...inputs: ClassValue[]) => {
+const accordionClassesOptim = (...inputs: ClassValue[]) => {
   return twMerge(clsx(...inputs));
 };
+
+const AccordionClasses = cva('bg-white text-gray-800 text-base font-normal');
+
+const AccordionItemClasses = cva('border');
 
 const AccordionHeaderClasses = cva(
   'flex justify-between items-center w-full p-3',
   {
     variants: {
-      bg: {
-        dark: 'dark',
-        light: 'light',
-      },
+      bg: {},
       bgToggle: {
-        primary: 'bg-blue-100',
+        primary:
+          'transition ease-in-out duration-300 bg-gray-100 text-gray-500',
       },
     },
     defaultVariants: {
-      bg: 'dark',
       bgToggle: 'primary',
     },
   },
 );
 
-export { AccordionHeaderClasses, headerClassesOptim };
+export {
+  AccordionClasses,
+  AccordionItemClasses,
+  AccordionHeaderClasses,
+  accordionClassesOptim,
+};
