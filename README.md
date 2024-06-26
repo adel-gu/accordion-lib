@@ -11,7 +11,7 @@
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Install](#install)
-  - [Usage](#usage
+  - [Usage](#usage)
 - [🔭 Future Features](#future-features)
 - [⭐️ Show your support](#support)
 
@@ -98,8 +98,6 @@ Example command:
 
 ## ⭐️ Show your support <a name="support"></a>
 
-This project shows how you can build a headless and reusable component using react, typescript, and tailwindCSS. So if you like this project please give it a star.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+This project shows how to build a reusable, headless component using react, typescript, and tailwindCSS. So if you like this project please give it a star.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
