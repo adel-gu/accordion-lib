@@ -1,0 +1,19 @@
+{
+  "name": "@accordion-lib/accordion",
+  "version": "1.0.0",
+  "private": false,
+  "scripts": {},
+  "dependencies": {
+    "react": "^18.2.0",
+    "class-variance-authority": "^0.6.0",
+    "clsx": "^1.2.1",
+    "tailwind-merge": "^1.12.0"
+  },
+  "devDependencies": {
+    "react-icons": "^4.8.0",
+    "tailwindcss": "^3.3.2",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "typescript": "^4.4.2"
+  }
+}
