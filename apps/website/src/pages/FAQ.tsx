@@ -1,11 +1,10 @@
-import React from 'react';
-import Accordion from 'components/accordion/Accordion';
-import { BsFillAlarmFill } from 'react-icons/bs';
-import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
+import { Accordion } from '@accordion-lib/accordion';
 
-const FAQ = () => {
+const Faq = () => {
   return (
     <div className="w-1/2 mx-auto mt-8">
+      <h1>Hello</h1>
+
       <Accordion>
         <Accordion.Item>
           <Accordion.Header>Accordion Item#1</Accordion.Header>
@@ -28,4 +27,4 @@ const FAQ = () => {
   );
 };
 
-export default FAQ;
+export default Faq;

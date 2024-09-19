@@ -1,9 +1,12 @@
 import React, { FC, useContext } from 'react';
-import { AccordionContext } from 'contexts/accordion';
-import { AccordionHeaderProps } from 'types/accordion';
+import { AccordionContext } from '../../contexts/accordion';
+import { AccordionHeaderProps } from '../../types/accordion';
 import { BsChevronUp, BsChevronDown } from 'react-icons/bs';
 
-import { AccordionHeaderClasses, accordionClassesOptim } from 'utils/accordion';
+import {
+  AccordionHeaderClasses,
+  accordionClassesOptim,
+} from '../../utils/accordion';
 
 const AccordionHeader: FC<AccordionHeaderProps> = ({
   children,
@@ -15,7 +18,7 @@ const AccordionHeader: FC<AccordionHeaderProps> = ({
   bgToggle,
   ...props
 }) => {
-  const { isToggle, handleToggle } = useContext(AccordionContext)!;
+  const { isToggle, handleToggle } = useContext(AccordionContext);
   bgToggle = isToggle ? bgToggle : null;
   return (
     <h2>

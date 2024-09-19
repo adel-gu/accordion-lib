@@ -1,8 +1,11 @@
-import { FC } from 'react';
-import { AccordionItemProps } from 'types/accordion';
-import { accordionClassesOptim, AccordionItemClasses } from 'utils/accordion';
-import { AccordionContext } from 'contexts/accordion';
-import { useAccordion } from 'hooks/accordion';
+import React, { FC } from 'react';
+import { AccordionItemProps } from '../../types/accordion';
+import {
+  accordionClassesOptim,
+  AccordionItemClasses,
+} from '../../utils/accordion';
+import { AccordionContext } from '../../contexts/accordion';
+import { useAccordion } from '../../hooks/accordion';
 
 const AccordionItem: FC<AccordionItemProps> = ({
   children,

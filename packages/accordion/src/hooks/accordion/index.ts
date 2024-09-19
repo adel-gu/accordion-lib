@@ -1,11 +1,15 @@
 import { useState } from 'react';
-import { AccordionStatus } from 'types/accordion';
+
+type AccordionStatus = {
+  isToggle: boolean;
+  handleToggle: () => void;
+};
 
 export const useAccordion = (): AccordionStatus => {
-  const [isToggle, setToggle] = useState(false);
+  const [isToggle, setIsToggle] = useState(false);
 
   const handleToggle = () => {
-    setToggle((prevIsToggle) => !prevIsToggle);
+    setIsToggle((prevIsToggle) => !prevIsToggle);
   };
 
   return { isToggle, handleToggle };

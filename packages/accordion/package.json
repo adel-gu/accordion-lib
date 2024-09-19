@@ -2,18 +2,38 @@
   "name": "@accordion-lib/accordion",
   "version": "1.0.0",
   "private": false,
-  "scripts": {},
-  "dependencies": {
-    "react": "^18.2.0",
-    "class-variance-authority": "^0.6.0",
-    "clsx": "^1.2.1",
-    "tailwind-merge": "^1.12.0"
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c --bundleConfigAsCjs",
+    "dev": "yarn build --watch"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "react-icons": "^4.8.0",
-    "tailwindcss": "^3.3.2",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "autoprefixer": "^10.4.20",
+    "class-variance-authority": "^0.6.0",
+    "clsx": "^1.2.1",
+    "react-icons": "^4.8.0",
+    "rollup": "^4.21.3",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "tailwind-merge": "^1.12.0",
+    "tailwindcss": "^3.3.2",
+    "tailwindcss-animate": "^1.0.7",
+    "tslib": "^2.7.0",
     "typescript": "^4.4.2"
   }
 }
