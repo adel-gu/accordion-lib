@@ -1,28 +1,27 @@
-import React, { FC } from 'react';
-import { AccordionItemProps } from '../../types/accordion';
-import {
-  accordionClassesOptim,
-  AccordionItemClasses,
-} from '../../utils/accordion';
-import { AccordionContext } from '../../contexts/accordion';
-import { useAccordion } from '../../hooks/accordion';
+import React, { ComponentProps, FC, forwardRef } from 'react';
+import { cva, VariantProps } from 'class-variance-authority';
+import { AccordionContext } from '@/contexts/accordion';
+import { useAccordion } from '@/hooks/accordion';
+import { cn } from '@/utils/utils';
 
-const AccordionItem: FC<AccordionItemProps> = ({
-  children,
-  className,
-  ...props
-}) => {
-  const value = useAccordion();
-  return (
-    <AccordionContext.Provider value={value}>
-      <div
-        className={accordionClassesOptim(AccordionItemClasses({ className }))}
-        {...props}
-      >
-        {children}
-      </div>
-    </AccordionContext.Provider>
-  );
-};
+const accordionItemVariants = cva(['']);
+
+type AccordionItemProps = ComponentProps<'div'> &
+  VariantProps<typeof accordionItemVariants>;
+
+const AccordionItem = forwardRef<HTMLDivElement, AccordionItemProps>(
+  ({ className, ...props }, ref) => {
+    const value = useAccordion();
+    return (
+      <AccordionContext.Provider value={value}>
+        <div
+          ref={ref}
+          className={cn(accordionItemVariants({ className }))}
+          {...props}
+        />
+      </AccordionContext.Provider>
+    );
+  },
+);
 
 export { AccordionItem };

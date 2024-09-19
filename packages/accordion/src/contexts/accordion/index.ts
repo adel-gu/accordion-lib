@@ -1,3 +1,8 @@
 import { createContext } from 'react';
-import { AccordionStatus } from '../../types/accordion';
+
+type AccordionStatus = {
+  isToggle?: boolean;
+  handleToggle?: () => void;
+};
+
 export const AccordionContext = createContext<AccordionStatus>({});

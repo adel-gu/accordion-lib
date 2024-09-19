@@ -1,31 +1,32 @@
-import React, { FC, useContext } from 'react';
-import { AccordionBodyProps } from '../../types/accordion';
-import { AccordionContext } from '../../contexts/accordion';
-import {
-  AccordionBodyClasses,
-  accordionClassesOptim,
-} from '../../utils/accordion';
+import React, { ComponentProps, forwardRef, useContext } from 'react';
+import { cva, VariantProps } from 'class-variance-authority';
+import { AccordionContext } from '@/contexts/accordion';
+import { cn } from '@/utils/utils';
 
-const AccordionBody: FC<AccordionBodyProps> = ({
-  children,
-  className,
-  ...props
-}) => {
-  const { isToggle } = useContext(AccordionContext);
+const accordionBodyVariants = cva(['']);
 
-  return (
-    <div
-      className={accordionClassesOptim(
-        AccordionBodyClasses({ className }),
-        `${isToggle && 'grid-rows-[1fr]'}`,
-      )}
-      {...props}
-    >
-      <div className={`overflow-hidden`}>
-        <p className="p-3">{children}</p>
+type AccordionBodyProps = ComponentProps<'div'> &
+  VariantProps<typeof accordionBodyVariants>;
+
+const AccordionBody = forwardRef<HTMLDivElement, AccordionBodyProps>(
+  ({ children, className, ...props }, ref) => {
+    const { isToggle } = useContext(AccordionContext);
+
+    return (
+      <div
+        ref={ref}
+        className={cn(
+          accordionBodyVariants({ className }),
+          `${isToggle && 'grid-rows-[1fr]'}`,
+        )}
+        {...props}
+      >
+        <div className={`overflow-hidden`}>
+          <p className="p-3">{children}</p>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  },
+);
 
 export { AccordionBody };

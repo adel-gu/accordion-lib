@@ -1,20 +1,26 @@
-import React, { FC } from 'react';
-import { AccordionProps } from '../../types/accordion';
-import { AccordionClasses, accordionClassesOptim } from '../../utils/accordion';
+import React, { ComponentProps, forwardRef } from 'react';
+import { cva, VariantProps } from 'class-variance-authority';
+import { cn } from '@/utils/utils';
 import { AccordionItem } from './AccordionItem';
 import { AccordionHeader } from './AccordionHeader';
 import { AccordionBody } from './AccordionBody';
 
-const Accordion: FC<AccordionProps> = ({ children, className, ...props }) => {
-  return (
-    <div
-      className={accordionClassesOptim(AccordionClasses({ className }))}
-      {...props}
-    >
-      {children}
-    </div>
-  );
-};
+const accordionVariants = cva(['']);
+
+type AccordionProps = ComponentProps<'div'> &
+  VariantProps<typeof accordionVariants>;
+
+const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
+  ({ className, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={cn(accordionVariants({ className }))}
+        {...props}
+      />
+    );
+  },
+);
 
 export default Object.assign(Accordion, {
   Item: AccordionItem,
