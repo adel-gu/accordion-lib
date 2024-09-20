@@ -6,8 +6,25 @@
   "repository": "git@github.com:adel-gu/accordion-lib.git",
   "author": "adel <adeelguitoun@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev:web": "npx nx dev @accordion-lib/website",
+    "build:web": "npx nx build @accordion-lib/website",
+    "dev:storybook": "npx nx storybook @accordion-lib/storybook",
+    "build:storybook": "npx nx build-storybook @accordion-lib/website",
+    "dev:accordion": "npx nx dev @accordion-lib/accordion",
+    "build:accordion": "npx nx build @accordion-lib/accordion"
+  },
   "workspaces": [
     "packages/*",
     "apps/*"
-  ]
+  ],
+  "devDependencies": {
+    "@nx/rollup": "19.8.0",
+    "@nx/storybook": "19.8.0",
+    "@nx/vite": "19.8.0",
+    "@nx/web": "19.8.0",
+    "nx": "19.8.0",
+    "storybook": "^8.2.8"
+  },
+  "dependencies": {}
 }

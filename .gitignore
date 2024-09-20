@@ -2,3 +2,9 @@ node_modules
 dist
 yarn-error.log
 storybook.log
+
+
+.nx/cache
+.nx/workspace-data
+
+storybook-static

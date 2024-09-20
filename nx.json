@@ -1,0 +1,18 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["{projectRoot}/dist"],
+      "cache": true
+    },
+    "build-storybook": {
+      "outputs": ["{projectRoot}/dist"],
+      "cache": true
+    },
+    "storybook": {
+      "cache": false
+    }
+  },
+  "defaultBase": "master"
+}
