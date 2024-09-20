@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button } from '@accordion-lib/accordion';
+import Faq from './pages/FAQ';
+
 const App = () => {
   return (
     <div>
-      <Button>Hello</Button>
+      <Faq />
     </div>
   );
 };

@@ -1,21 +1,20 @@
-import React, { ComponentProps, forwardRef, useContext } from 'react';
+import React, { ComponentProps, forwardRef } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
-import { BsChevronUp, BsChevronDown } from 'react-icons/bs';
-import { AccordionContext } from '@/contexts/accordion';
+import { BsChevronUp } from 'react-icons/bs';
 import { cn } from '@/utils/utils';
 
-const accordionHeaderVariants = cva(['']);
+const accordionHeaderVariants = cva([
+  'flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180',
+]);
 
 type AccordionHeaderProps = ComponentProps<'button'> &
   VariantProps<typeof accordionHeaderVariants>;
 
 const AccordionHeader = forwardRef<HTMLButtonElement, AccordionHeaderProps>(
   ({ children, className, ...props }, ref) => {
-    const { isToggle, handleToggle } = useContext(AccordionContext);
     return (
       <button
         ref={ref}
-        onClick={handleToggle}
         className={cn(accordionHeaderVariants({ className }))}
         {...props}
       >
