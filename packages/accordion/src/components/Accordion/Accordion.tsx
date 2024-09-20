@@ -7,7 +7,7 @@ import { AccordionBody } from './AccordionBody';
 
 const accordionVariants = cva(['']);
 
-type AccordionProps = ComponentProps<'div'> &
+export type AccordionProps = ComponentProps<'div'> &
   VariantProps<typeof accordionVariants>;
 
 const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
