@@ -12,7 +12,9 @@
     "dev:storybook": "npx nx storybook @accordion-lib/storybook",
     "build:storybook": "npx nx build-storybook @accordion-lib/website",
     "dev:accordion": "npx nx dev @accordion-lib/accordion",
-    "build:accordion": "npx nx build @accordion-lib/accordion"
+    "build:accordion": "npx nx build @accordion-lib/accordion",
+    "build": "yarn build:accordion & yarn build:web",
+    "start": "npx nx @accordion-lib/website preview"
   },
   "workspaces": [
     "packages/*",
