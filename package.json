@@ -14,7 +14,8 @@
     "dev:accordion": "npx nx dev @accordion-lib/accordion",
     "build:accordion": "npx nx build @accordion-lib/accordion",
     "build": "yarn build:accordion & yarn build:web",
-    "start": "npx nx preview @accordion-lib/website"
+    "start": "npx nx preview @accordion-lib/website",
+    "chromatic": "npx nx chromatic @accordion-lib/storybook"
   },
   "workspaces": [
     "packages/*",

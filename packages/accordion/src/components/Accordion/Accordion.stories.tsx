@@ -18,7 +18,7 @@ const Template: StoryFn<AccordionProps> = (args) => (
       </Accordion.Body>
     </Accordion.Item>
     <Accordion.Item>
-      <Accordion.Header>Accordion Item#1</Accordion.Header>
+      <Accordion.Header>Accordion Item#2</Accordion.Header>
       <Accordion.Body>
         Placeholder content for this accordion, which is intended to demonstrate
         the .accordion-flush class. This is the first item's accordion body.
