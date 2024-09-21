@@ -32,6 +32,7 @@ export default [
       typescript({ tsconfig: './tsconfig.json' }),
       terser(),
     ],
+    external: ['react', 'react-dom'],
   },
   {
     input: 'src/styles/main.css',
