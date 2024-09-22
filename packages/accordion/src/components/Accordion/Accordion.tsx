@@ -30,7 +30,7 @@ const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
     const value = useMemo(() => {
       return {
         handleToggle: (item: string) => {
-          setItem(item);
+          setItem((prev) => (prev === item ? '' : item));
         },
         item,
       };

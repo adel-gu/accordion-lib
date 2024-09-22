@@ -6,7 +6,7 @@ import { AccordionContext } from './Accordion';
 import { AccordionItemContext } from './AccordionItem';
 
 const accordionHeaderVariants = cva(
-  'w-full flex justify-between items-center text-slate-800',
+  'w-full flex justify-between items-center text-slate-800 disabled:text-slate-500',
 );
 
 type AccordionHeaderProps = ComponentProps<'button'> &
@@ -22,13 +22,11 @@ const AccordionHeader = forwardRef<HTMLButtonElement, AccordionHeaderProps>(
         <button
           ref={ref}
           className={cn(accordionHeaderVariants({ className }))}
-          {...props}
           onClick={() => handleToggle?.(hash)}
+          {...props}
         >
           <span>{children}</span>
-          <span className="text-slate-800">
-            {item === hash ? <FaMinus /> : <FaPlus />}
-          </span>
+          <span>{item === hash ? <FaMinus /> : <FaPlus />}</span>
         </button>
       </div>
     );
