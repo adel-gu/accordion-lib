@@ -2,12 +2,16 @@ import React, {
   ComponentProps,
   createContext,
   forwardRef,
+  ReactElement,
+  useEffect,
   useMemo,
   useState,
 } from 'react';
+import PropTypes from 'prop-types';
+
 import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '@/utils/utils';
-import { AccordionItem } from './AccordionItem';
+import { AccordionItem, AccordionItemProps } from './AccordionItem';
 import { AccordionHeader } from './AccordionHeader';
 import { AccordionBody } from './AccordionBody';
 
@@ -21,10 +25,12 @@ export const AccordionContext = createContext<AccordionStatus>({});
 const accordionVariants = cva(['']);
 
 export type AccordionProps = ComponentProps<'div'> &
-  VariantProps<typeof accordionVariants>;
+  VariantProps<typeof accordionVariants> & {
+    alwaysOpen?: boolean;
+  };
 
 const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
-  ({ className, ...props }, ref) => {
+  ({ children, className, alwaysOpen = false, ...props }, ref) => {
     const [item, setItem] = useState('');
 
     const value = useMemo(() => {
@@ -36,17 +42,33 @@ const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
       };
     }, [item]);
 
+    useEffect(() => {
+      const alwaysOpenedItemId = (
+        React.Children.toArray(children)[0] as ReactElement<AccordionItemProps>
+      ).props.itemId;
+
+      if (alwaysOpen && alwaysOpenedItemId) {
+        setItem(alwaysOpenedItemId);
+      }
+    }, [alwaysOpen]);
+
     return (
       <AccordionContext.Provider value={value}>
         <div
           ref={ref}
           className={cn(accordionVariants({ className }))}
           {...props}
-        />
+        >
+          {children}
+        </div>
       </AccordionContext.Provider>
     );
   },
 );
+
+Accordion.propTypes = {
+  alwaysOpen: PropTypes.bool,
+};
 
 export default Object.assign(Accordion, {
   Item: AccordionItem,
