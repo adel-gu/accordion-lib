@@ -14,8 +14,8 @@ type AccordionItemStatus = {
 export const AccordionItemContext = createContext<AccordionItemStatus>({
   hash: '',
 });
-
-const accordionItemVariants = cva(['']);
+//
+const accordionItemVariants = cva('border-b border-slate-200 mx-3 py-3');
 
 type AccordionItemProps = ComponentProps<'div'> &
   VariantProps<typeof accordionItemVariants>;

@@ -1454,6 +1454,11 @@
   dependencies:
     "@types/mdx" "^2.0.0"
 
+"@mstssk/cleandir@^1.2.0":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@mstssk/cleandir/-/cleandir-1.2.1.tgz#b8f7e2eb0c2f6efbc0d2a854471fa4d9c7e699f7"
+  integrity sha512-n/62eVEJOBb3CI1Y4r/IOLzvXoI0/MxGGOryT7UGF2C2WSXV3HozwrowqtHoDDbLmWIw+HJbuHZl9vledmGpoQ==
+
 "@napi-rs/wasm-runtime@0.2.4":
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/@napi-rs/wasm-runtime/-/wasm-runtime-0.2.4.tgz#d27788176f250d86e498081e3c5ff48a17606918"
@@ -6137,6 +6142,13 @@ reusify@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/reusify/-/reusify-1.0.4.tgz#90da382b1e126efc02146e90845a88db12925d76"
   integrity sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==
+
+rollup-plugin-cleandir@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-cleandir/-/rollup-plugin-cleandir-2.0.0.tgz#c9f8574664fd3ff760dc46a268df9c391b985350"
+  integrity sha512-cTL/WbBJqHQkYBplhtiQ/yc0IqTuRR7EGw/S+XtQdaFhtv6+Xq/j8dxkk5lzTcxd0hCahUebZFYhLBRzSsgynw==
+  dependencies:
+    "@mstssk/cleandir" "^1.2.0"
 
 rollup-plugin-copy@^3.5.0:
   version "3.5.0"

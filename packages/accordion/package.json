@@ -9,7 +9,7 @@
   ],
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rollup -c --bundleConfigAsCjs",
+    "build": "rollup -c",
     "dev": "yarn build --watch"
   },
   "peerDependencies": {
@@ -28,6 +28,7 @@
     "clsx": "^1.2.1",
     "react-icons": "^4.8.0",
     "rollup": "^4.21.3",
+    "rollup-plugin-cleandir": "^2.0.0",
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-postcss": "^4.0.2",
     "tailwind-merge": "^1.12.0",

@@ -9,17 +9,34 @@ const Faq = () => {
         <Accordion.Item>
           <Accordion.Header>Accordion Item#1</Accordion.Header>
           <Accordion.Body>
-            Placeholder content for this accordion, which is intended to
-            demonstrate the .accordion-flush class. This is the first item's
-            accordion body.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item>
           <Accordion.Header>Accordion Item#1</Accordion.Header>
           <Accordion.Body>
-            Placeholder content for this accordion, which is intended to
-            demonstrate the .accordion-flush class. This is the first item's
-            accordion body.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum.
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item>
+          <Accordion.Header>Accordion Item#1</Accordion.Header>
+          <Accordion.Body>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum.
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>

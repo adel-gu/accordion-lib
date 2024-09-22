@@ -4,6 +4,7 @@ import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 import postcss from 'rollup-plugin-postcss';
+import { cleandir } from 'rollup-plugin-cleandir';
 
 import packageJson from './package.json' assert { type: 'json' };
 
@@ -31,6 +32,7 @@ export default [
       commonjs(),
       typescript({ tsconfig: './tsconfig.json' }),
       terser(),
+      cleandir('./dist'),
     ],
     external: ['react', 'react-dom'],
   },
@@ -54,7 +56,7 @@ export default [
   {
     input: 'dist/esm/types/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
-    plugins: [dts.default()],
+    plugins: [dts()],
     external: [/\.css$/],
   },
 ];
