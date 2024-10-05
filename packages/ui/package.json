@@ -1,5 +1,5 @@
 {
-  "name": "@accordion-lib/accordion",
+  "name": "@mini-react-ui/ui",
   "version": "1.0.0",
   "private": true,
   "main": "dist/cjs/index.js",

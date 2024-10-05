@@ -5,8 +5,8 @@ const Faq = () => {
     <div className="w-1/2 mx-auto mt-8">
       <h1>Hello</h1>
 
-      <Accordion>
-        <Accordion.Item>
+      <Accordion alwaysOpen>
+        <Accordion.Item itemId="1">
           <Accordion.Header>Accordion Item#1</Accordion.Header>
           <Accordion.Body>
             Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -15,7 +15,7 @@ const Faq = () => {
             anim id est laborum.
           </Accordion.Body>
         </Accordion.Item>
-        <Accordion.Item>
+        <Accordion.Item itemId="2">
           <Accordion.Header>Accordion Item#1</Accordion.Header>
           <Accordion.Body>
             Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -27,7 +27,19 @@ const Faq = () => {
             officia deserunt mollit anim id est laborum.
           </Accordion.Body>
         </Accordion.Item>
-        <Accordion.Item>
+        <Accordion.Item itemId="3">
+          <Accordion.Header>Accordion Item#1</Accordion.Header>
+          <Accordion.Body>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum.
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item itemId="4">
           <Accordion.Header>Accordion Item#1</Accordion.Header>
           <Accordion.Body>
             Duis aute irure dolor in reprehenderit in voluptate velit esse
