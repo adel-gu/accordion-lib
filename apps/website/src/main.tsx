@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
-import '@accordion-lib/accordion/dist/index.css';
+import '@mini-react-ui/ui/dist/index.css';
 import './index.css';
 
 createRoot(document.getElementById('root')!).render(

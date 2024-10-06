@@ -3,19 +3,19 @@
   "private": true,
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:adel-gu/accordion-lib.git",
+  "repository": "git@github.com:adel-gu/mini-react-ui.git",
   "author": "adel <adeelguitoun@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev:web": "npx nx dev @accordion-lib/website",
-    "build:web": "npx nx build @accordion-lib/website",
-    "dev:storybook": "npx nx storybook @accordion-lib/storybook",
-    "build:storybook": "npx nx build-storybook @accordion-lib/website",
-    "dev:accordion": "npx nx dev @accordion-lib/accordion",
-    "build:accordion": "npx nx build @accordion-lib/accordion",
+    "dev:web": "npx nx dev @mini-react-ui/website",
+    "build:web": "npx nx build @mini-react-ui/website",
+    "dev:storybook": "npx nx storybook @mini-react-ui/storybook",
+    "build:storybook": "npx nx build-storybook @mini-react-ui/website",
+    "dev:accordion": "npx nx dev @mini-react-ui/accordion",
+    "build:accordion": "npx nx build @mini-react-ui/accordion",
     "build": "yarn build:accordion & yarn build:web",
-    "start": "npx nx preview @accordion-lib/website",
-    "chromatic": "npx nx chromatic @accordion-lib/storybook"
+    "start": "npx nx preview @mini-react-ui/website",
+    "chromatic": "npx nx chromatic @mini-react-ui/storybook"
   },
   "workspaces": [
     "packages/*",
