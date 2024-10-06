@@ -11,9 +11,9 @@
     "build:web": "npx nx build @mini-react-ui/website",
     "dev:storybook": "npx nx storybook @mini-react-ui/storybook",
     "build:storybook": "npx nx build-storybook @mini-react-ui/website",
-    "dev:accordion": "npx nx dev @mini-react-ui/accordion",
-    "build:accordion": "npx nx build @mini-react-ui/accordion",
-    "build": "yarn build:accordion & yarn build:web",
+    "dev:ui": "npx nx dev @mini-react-ui/ui",
+    "build:ui": "npx nx build @mini-react-ui/ui",
+    "build": "yarn build:ui & yarn build:web",
     "start": "npx nx preview @mini-react-ui/website",
     "chromatic": "npx nx chromatic @mini-react-ui/storybook"
   },
