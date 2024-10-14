@@ -1,4 +1,4 @@
-import { Accordion } from '@mini-react-ui/ui';
+import {Accordion} from "@mini-react-ui/ui"
 
 const Faq = () => {
   return (

@@ -7,15 +7,15 @@
   "author": "adel <adeelguitoun@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev:web": "npx nx dev @mini-react-ui/website",
-    "build:web": "npx nx build @mini-react-ui/website",
-    "dev:storybook": "npx nx storybook @mini-react-ui/storybook",
-    "build:storybook": "npx nx build-storybook @mini-react-ui/website",
-    "dev:ui": "npx nx dev @mini-react-ui/ui",
-    "build:ui": "npx nx build @mini-react-ui/ui",
+    "dev:web": "nx dev @mini-react-ui/website",
+    "build:web": "nx build @mini-react-ui/website",
+    "dev:storybook": "nx storybook @mini-react-ui/storybook",
+    "build:storybook": "nx build-storybook @mini-react-ui/website",
+    "dev:ui": "nx dev @mini-react-ui/ui",
+    "build:ui": "nx build @mini-react-ui/ui",
     "build": "yarn build:ui & yarn build:web",
-    "start": "npx nx preview @mini-react-ui/website",
-    "chromatic": "npx nx chromatic @mini-react-ui/storybook"
+    "start": "nx preview @mini-react-ui/website",
+    "chromatic": "nx chromatic @mini-react-ui/storybook"
   },
   "workspaces": [
     "packages/*",

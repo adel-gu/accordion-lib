@@ -21,18 +21,19 @@ export default [
     output: [
       {
         format: "cjs",
-        file: `${outputDir}/bundle.cjs`,
+        file: `${outputDir}/bundle.js`,
         sourcemap: true,
       },
       {
         format: "es",
-        file: `${outputDir}/bundle.mjs`,
+        file: `${outputDir}/bundle.es.js`,
         sourcemap: true,
       },
     ],
     plugins: [
       postcss({
-        extract: 'dist/base.css'
+        extract: 'base.css',
+        minimize: true
       }),
       resolve(),
       typescript({

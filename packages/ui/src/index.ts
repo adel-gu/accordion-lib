@@ -1,1 +1,2 @@
-export * from '@/components/Accordion';
+import "./styles/main.css"
+export * from './components/Accordion';

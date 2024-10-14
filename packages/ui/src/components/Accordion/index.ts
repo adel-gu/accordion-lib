@@ -1,4 +1,4 @@
 export { Accordion, type AccordionProps } from './Accordion';
-export {type AccordionBodyProps} from "./AccordionBody"
-export {type AccordionHeaderProps} from "./AccordionHeader"
-export {type AccordionItemProps} from "./AccordionItem"
+// export {AccordionBody, type AccordionBodyProps} from "./AccordionBody"
+// export {AccordionHeader, type AccordionHeaderProps} from "./AccordionHeader"
+// export {AccordionItem, type AccordionItemProps} from "./AccordionItem"
