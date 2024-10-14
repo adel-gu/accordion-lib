@@ -1,6 +1,5 @@
-import React, { ComponentProps, forwardRef, useContext } from 'react';
+import { ComponentProps, forwardRef, useContext } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
-import { FaPlus, FaMinus } from 'react-icons/fa6';
 import { cn } from '@/utils/utils';
 import { AccordionContext } from './Accordion';
 import { AccordionItemContext } from './AccordionItem';
@@ -9,10 +8,10 @@ const accordionHeaderVariants = cva(
   'w-full flex justify-between items-center text-slate-800 disabled:text-slate-500',
 );
 
-type AccordionHeaderProps = ComponentProps<'button'> &
+export type AccordionHeaderProps = ComponentProps<'button'> &
   VariantProps<typeof accordionHeaderVariants>;
 
-const AccordionHeader = forwardRef<HTMLButtonElement, AccordionHeaderProps>(
+export const AccordionHeader = forwardRef<HTMLButtonElement, AccordionHeaderProps>(
   ({ children, className, ...props }, ref) => {
     const { handleToggle, item } = useContext(AccordionContext);
     const { hash } = useContext(AccordionItemContext);
@@ -26,11 +25,11 @@ const AccordionHeader = forwardRef<HTMLButtonElement, AccordionHeaderProps>(
           {...props}
         >
           <span>{children}</span>
-          <span>{item === hash ? <FaMinus /> : <FaPlus />}</span>
+          <span>{item === hash ? "+" : "-"}</span>
         </button>
       </div>
     );
   },
 );
 
-export { AccordionHeader };
+AccordionHeader.displayName = "AccordionHeader"

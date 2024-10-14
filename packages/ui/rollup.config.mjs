@@ -1,62 +1,47 @@
-import resolve from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import terser from '@rollup/plugin-terser';
-import typescript from '@rollup/plugin-typescript';
-import dts from 'rollup-plugin-dts';
-import postcss from 'rollup-plugin-postcss';
-import { cleandir } from 'rollup-plugin-cleandir';
+import resolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
+import terser from "@rollup/plugin-terser";
+import typescript from "@rollup/plugin-typescript";
+import postcss from 'rollup-plugin-postcss'
+import { cleandir } from "rollup-plugin-cleandir";
+import packageJson from "./package.json" assert { type: "json" };
 
-import packageJson from './package.json' assert { type: 'json' };
+const entry = "src/index.ts"
+const external = [
+  ...Object.keys({
+    ...packageJson.dependencies,
+    ...packageJson.peerDependencies,
+  }),
+];
+const outputDir = "dist";
 
 export default [
   {
-    input: 'src/index.ts',
+    input: entry,
     output: [
       {
-        file: packageJson.main,
-        format: 'cjs',
+        format: "cjs",
+        file: `${outputDir}/bundle.cjs`,
         sourcemap: true,
       },
       {
-        file: packageJson.module,
-        format: 'esm',
+        format: "es",
+        file: `${outputDir}/bundle.mjs`,
         sourcemap: true,
       },
     ],
     plugins: [
-      resolve({
-        ignoreGlobal: false,
-        include: ['node_modules/**'],
-        skip: ['react', 'react-dom'],
+      postcss({
+        extract: 'dist/base.css'
+      }),
+      resolve(),
+      typescript({
+        tsconfig: "tsconfig.build.json",
       }),
       commonjs(),
-      typescript({ tsconfig: './tsconfig.json' }),
       terser(),
-      cleandir('./dist'),
+      cleandir(outputDir),
     ],
-    external: ['react', 'react-dom'],
-  },
-  {
-    input: 'src/styles/main.css',
-    output: [{ file: 'dist/index.css', format: 'es' }],
-    plugins: [
-      postcss({
-        config: {
-          path: './postcss.config.js',
-        },
-        extensions: ['.css'],
-        minimize: true,
-        extract: true,
-        inject: {
-          insertAt: 'top',
-        },
-      }),
-    ],
-  },
-  {
-    input: 'dist/esm/types/index.d.ts',
-    output: [{ file: 'dist/index.d.ts', format: 'esm' }],
-    plugins: [dts()],
-    external: [/\.css$/],
+    external
   },
 ];

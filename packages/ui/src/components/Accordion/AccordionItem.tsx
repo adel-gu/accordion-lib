@@ -1,13 +1,12 @@
-import React, {
+import {
   ComponentProps,
   createContext,
   forwardRef,
-  useContext,
   useMemo,
 } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '@/utils/utils';
-import { AccordionContext } from './Accordion';
+
 
 import PropTypes from 'prop-types';
 
@@ -26,9 +25,8 @@ export type AccordionItemProps = ComponentProps<'div'> &
     itemId: string;
   };
 
-const AccordionItem = forwardRef<HTMLDivElement, AccordionItemProps>(
+export const AccordionItem = forwardRef<HTMLDivElement, AccordionItemProps>(
   ({ className, itemId, ...props }, ref) => {
-    const { handleToggle } = useContext(AccordionContext);
 
     const value = useMemo(() => {
       return { hash: itemId };
@@ -50,4 +48,4 @@ AccordionItem.propTypes = {
   itemId: PropTypes.string.isRequired,
 };
 
-export { AccordionItem };
+AccordionItem.displayName = "AccordionItem"

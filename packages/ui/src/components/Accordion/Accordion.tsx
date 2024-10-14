@@ -29,7 +29,7 @@ export type AccordionProps = ComponentProps<'div'> &
     alwaysOpen?: boolean;
   };
 
-const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
+const AccordionComponent = forwardRef<HTMLDivElement, AccordionProps>(
   ({ children, className, alwaysOpen = false, ...props }, ref) => {
     const [item, setItem] = useState('');
 
@@ -66,12 +66,14 @@ const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
   },
 );
 
-Accordion.propTypes = {
+AccordionComponent.propTypes = {
   alwaysOpen: PropTypes.bool,
 };
 
-export default Object.assign(Accordion, {
+export const Accordion = Object.assign(AccordionComponent, {
   Item: AccordionItem,
   Header: AccordionHeader,
   Body: AccordionBody,
 });
+
+Accordion.displayName = "Accordion"

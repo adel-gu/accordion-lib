@@ -1,4 +1,4 @@
-import React, { ComponentProps, forwardRef, useContext } from 'react';
+import { ComponentProps, forwardRef, useContext } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '@/utils/utils';
 import { AccordionContext } from './Accordion';
@@ -16,10 +16,10 @@ const accordionBodyVariants = cva([
   'text-slate-600',
 ]);
 
-type AccordionBodyProps = ComponentProps<'div'> &
+export type AccordionBodyProps = ComponentProps<'div'> &
   VariantProps<typeof accordionBodyVariants>;
 
-const AccordionBody = forwardRef<HTMLDivElement, AccordionBodyProps>(
+export const AccordionBody = forwardRef<HTMLDivElement, AccordionBodyProps>(
   ({ children, className, ...props }, ref) => {
     const { item } = useContext(AccordionContext);
     const { hash } = useContext(AccordionItemContext);
@@ -41,4 +41,4 @@ const AccordionBody = forwardRef<HTMLDivElement, AccordionBodyProps>(
   },
 );
 
-export { AccordionBody };
+AccordionBody.displayName = "AccordionBody"

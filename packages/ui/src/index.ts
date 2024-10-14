@@ -1,1 +1,1 @@
-export { default as Accordion } from '@/components/Accordion';
+export * from '@/components/Accordion';
