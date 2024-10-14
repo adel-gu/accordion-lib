@@ -2,8 +2,8 @@
   "name": "@mini-react-ui/ui",
   "version": "1.0.0",
   "private": true,
-  "main": "dist/bundle.cjs",
-  "module": "dist/bundle.mjs",
+  "main": "dist/bundle.js",
+  "module": "dist/bundle.es.js",
   "types": "dist/index.d.ts",
   "style": "dist/base.css",
   "files": [
