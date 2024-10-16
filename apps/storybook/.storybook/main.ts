@@ -10,7 +10,7 @@ function getAbsolutePath(value: string): any {
   return dirname(require.resolve(join(value, 'package.json')));
 }
 const config: StorybookConfig = {
-  stories: ['../../../packages/accordion/**/*.stories.@(ts|tsx)'],
+  stories: ['../../../packages/ui/**/*.stories.@(ts|tsx)'],
   addons: [
     getAbsolutePath('@storybook/addon-links'),
     getAbsolutePath('@storybook/addon-essentials'),
@@ -26,12 +26,12 @@ const config: StorybookConfig = {
   },
   // To resolve imports with "@/.."
   viteFinal: async (config) => {
-    config.root = path.resolve(__dirname, '../../../packages/accordion');
+    config.root = path.resolve(__dirname, '../../../packages/ui');
 
     config.plugins?.push(
       tsconfigPaths({
         projects: [
-          path.resolve(__dirname, '../../../packages/accordion/tsconfig.json'),
+          path.resolve(__dirname, '../../../packages/ui/tsconfig.json'),
         ],
       }),
     );
