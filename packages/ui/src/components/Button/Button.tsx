@@ -43,15 +43,16 @@ const buttonVariants = cva(
 
 export type ButtonProps = ComponentProps<"button"> & VariantProps<typeof buttonVariants> & {
   asChild?: boolean,
-  pill?: boolean
+  pill?: boolean,
+  type?: string
 }
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({className, variant, size, asChild = false, pill=false, ...props}, ref) => {
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({className, variant, size, asChild = false, pill=false, type="button", ...props}, ref) => {
 
   const Comp = asChild ? Slot : "button";
 
   return (
-    <Comp ref={ref} className={cn(buttonVariants({variant, size, className}), `${pill && "rounded-full"}`)} {...props} />
+    <Comp ref={ref} className={cn(buttonVariants({variant, size, className}), `${pill && "rounded-full"}`)} type={type} {...props}/>
   )
 })
 
