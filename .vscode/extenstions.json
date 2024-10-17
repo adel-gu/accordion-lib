@@ -1,0 +1,9 @@
+{
+  "recommandations": [
+    "esbenp.prettier-vscode",
+    "sonarsource.sonarlint-vscode",
+    "dbaeumer.vscode-eslint",
+    "yoavbls.pretty-ts-errors",
+    "bradlc.vscode-tailwindcss"
+  ]
+}

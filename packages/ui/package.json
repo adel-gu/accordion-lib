@@ -13,7 +13,9 @@
     "build": "rollup -c",
     "dev": "yarn build --watch",
     "test": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
   },
   "peerDependencies": {
     "react": "^18.3.1",
@@ -34,6 +36,8 @@
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
     "jsdom": "^25.0.1",
+    "prettier-plugin-curly": "^0.3.1",
+    "prettier-plugin-tailwindcss": "^0.6.8",
     "rollup": "^4.21.3",
     "rollup-plugin-cleandir": "^2.0.0",
     "rollup-plugin-postcss": "^4.0.2",

@@ -26,7 +26,10 @@
     "@nx/storybook": "19.8.0",
     "@nx/vite": "19.8.0",
     "@nx/web": "19.8.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "nx": "19.8.0",
+    "prettier": "^3.3.3",
+    "prettier-plugin-packagejson": "^2.5.3",
     "storybook": "^8.2.8"
   },
   "dependencies": {}
