@@ -28,6 +28,6 @@
     /* Completeness */
     "skipLibCheck": true
   },
-  "include": ["**/*.ts", "**/*.tsx", "tsconfig.build.json"],
+  "include": ["src"],
   "exclude": ["dist"]
 }
