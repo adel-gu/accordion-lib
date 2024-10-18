@@ -11,3 +11,4 @@ runs:
 
     - name: Install dependencies
       run: yarn install
+      shell: bash
