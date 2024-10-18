@@ -24,6 +24,7 @@
     "lint:ui:fix": "nx lint:fix @mini-react-ui/ui",
     "lint": "nx run-many -t lint",
     "lint:fix": "nx run-many -t lint:fix",
+    "test": "nx run-many -t test",
     "postinstall": "husky",
     "prepack": "pinst --disable",
     "postpack": "pinst --enable"
