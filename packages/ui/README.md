@@ -34,7 +34,6 @@ Practicing compound component patterns by building a react reusable accordion co
   </ul>
 </details>
 
-
 <!-- Features -->
 <!-- LIVE DEMO -->
 <!-- GETTING STARTED -->
@@ -43,11 +42,9 @@ Practicing compound component patterns by building a react reusable accordion co
 
 To get a local copy up and running, follow these steps.
 
-
 ### Setup
 
 Clone this repository to your desired folder:
-
 
 Example commands:
 
@@ -55,7 +52,6 @@ Example commands:
   cd my-folder
   git clone git@github.com:adel-gu/react-practice-components.git
 ```
-
 
 ### Install
 
@@ -78,7 +74,6 @@ OR
 ### Usage
 
 To run the project, execute the following command:
-
 
 Example command:
 

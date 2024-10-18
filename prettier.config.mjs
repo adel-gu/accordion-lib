@@ -10,13 +10,8 @@ export default {
 	arrowParens: "always",
 	// sort-imports
 	importOrder: [
-		"<BUILTIN_MODULES>",
-		"<THIRD_PARTY_MODULES>",
-		"^~/(.*)$",
-		"^[.]",
-		"",
-		"^(?!.*[.]css$)[./].*$",
-		".css$",
+		"^[react]",
+		"^@(?!/)", "^@/", "^[./]",
 	],
 	importOrderSeparation: true,
 	importOrderSortSpecifiers: true,

@@ -15,7 +15,18 @@
     "build:ui": "nx build @mini-react-ui/ui",
     "build": "yarn build:ui & yarn build:web",
     "start": "nx preview @mini-react-ui/website",
-    "chromatic": "nx chromatic @mini-react-ui/storybook"
+    "chromatic": "nx chromatic @mini-react-ui/storybook",
+    "format:ui:check": "nx format:check @mini-react-ui/ui",
+    "format:ui": "nx format @mini-react-ui/ui",
+    "format:check": "nx run-many -t format:check",
+    "format": "nx run-many -t format",
+    "lint:ui": "nx lint @mini-react-ui/ui",
+    "lint:ui:fix": "nx lint:fix @mini-react-ui/ui",
+    "lint": "nx run-many -t lint",
+    "lint:fix": "nx run-many -t lint:fix",
+    "postinstall": "husky",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable"
   },
   "workspaces": [
     "packages/*",
@@ -27,6 +38,8 @@
     "@nx/vite": "19.8.0",
     "@nx/web": "19.8.0",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
     "nx": "19.8.0",
     "prettier": "^3.3.3",
     "prettier-plugin-packagejson": "^2.5.3",

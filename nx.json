@@ -12,6 +12,12 @@
     },
     "storybook": {
       "cache": false
+    },
+    "lint": {
+      "cache": true
+    },
+    "format": {
+      "cache": true
     }
   },
   "defaultBase": "master"
