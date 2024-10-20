@@ -28,6 +28,6 @@
     /* Completeness */
     "skipLibCheck": true
   },
-  "include": ["src"],
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["dist"]
 }

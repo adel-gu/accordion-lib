@@ -1,12 +1,10 @@
-import globals from 'globals';
 import path from 'path';
 import { fileURLToPath } from 'url';
-
+import { FlatCompat } from '@eslint/eslintrc';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import pluginReact from 'eslint-plugin-react';
 import tailwind from 'eslint-plugin-tailwindcss';
-
-import { FlatCompat } from '@eslint/eslintrc';
+import globals from 'globals';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);

@@ -10,14 +10,19 @@ export default {
 	arrowParens: "always",
 	// sort-imports
 	importOrder: [
-		"^[react]",
-		"^@(?!/)", "^@/", "^[./]",
+		"^react",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^@/components/(.*)$",
+    "^@/utils/(.*)$",
+    "",
+    "^[./]"
 	],
 	importOrderSeparation: true,
 	importOrderSortSpecifiers: true,
 	plugins: [
 		"prettier-plugin-packagejson",
-		"@trivago/prettier-plugin-sort-imports",
+		"@ianvs/prettier-plugin-sort-imports",
 		"prettier-plugin-curly"
 	],
 };
