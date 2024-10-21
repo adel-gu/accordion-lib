@@ -35,7 +35,9 @@ const eslintrcConfig = compat.config({
 		'import/extensions': 'off',
 		'import/no-extraneous-dependencies': 'off',
 		'import/no-relative-packages': 'off',
+		'import/prefer-default-export': 'off',
 		'@typescript-eslint/no-var-requires': 'off',
+		'global-require': 'off',
 	},
 });
 
@@ -62,5 +64,10 @@ export default [
 	pluginReact.configs.flat.recommended,
 	...eslintrcConfig,
 	...tailwind.configs['flat/recommended'],
+	{
+		rules: {
+			'tailwindcss/no-custom-classname': 'off',
+		},
+	},
 	eslintConfigPrettier,
 ];
