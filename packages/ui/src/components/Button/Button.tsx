@@ -9,23 +9,26 @@ const buttonVariants = cva(
 	{
 		variants: {
 			variant: {
-				default: 'bg-cyan-400 focus:ring-cyan-300 enabled:hover:bg-cyan-900',
-				dark: 'bg-gray-800 focus:ring-gray-300 enabled:hover:bg-gray-900',
-				gray: 'border-gray-200 bg-white text-gray-900 hover:text-cyan-700 focus:text-cyan-700 enabled:hover:bg-gray-100',
+				default:
+					'bg-cyan-600 focus:ring-cyan-300 enabled:hover:bg-cyan-700 dark:bg-cyan-700 dark:enabled:hover:bg-cyan-800 dark:enabled:focus:ring-cyan-800',
+				dark: 'bg-gray-800 focus:ring-gray-300 enabled:hover:bg-gray-900 dark:border-gray-700 dark:bg-gray-800 dark:focus:ring-gray-800 dark:enabled:hover:bg-gray-700',
+				gray: 'border-gray-200 bg-white text-gray-900 hover:text-cyan-700 focus:text-cyan-700 enabled:hover:bg-gray-100 dark:border-gray-600 dark:bg-transparent dark:text-gray-400 dark:enabled:hover:bg-gray-700 dark:enabled:hover:text-white',
 				light:
-					'border-gray-300 bg-white text-gray-900 focus:ring-cyan-300 enabled:hover:bg-gray-100',
-				success: 'bg-green-700 focus:ring-green-300 enabled:hover:bg-green-800',
-				danger: 'bg-red-700 focus:ring-red-300 enabled:hover:bg-red-800',
+					'border-gray-300 bg-white text-gray-900 focus:ring-cyan-300 enabled:hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-600 dark:text-white dark:focus:ring-gray-700 dark:enabled:hover:border-gray-700 dark:enabled:hover:bg-gray-700',
+				success:
+					'bg-green-700 focus:ring-green-300 enabled:hover:bg-green-800 dark:bg-green-600 dark:focus:ring-green-800 dark:enabled:hover:bg-green-700',
+				danger:
+					'bg-red-700 focus:ring-red-300 enabled:hover:bg-red-800 dark:bg-red-600 dark:focus:ring-red-900 dark:enabled:hover:bg-red-700',
 				warning:
-					'bg-yellow-400 focus:ring-yellow-300 enabled:hover:bg-yellow-500',
+					'bg-yellow-400 focus:ring-yellow-300 enabled:hover:bg-yellow-500 dark:focus:ring-yellow-900',
 				pinkToOrange:
-					'bg-gradient-to-tr from-pink-500 to-orange-400 focus:ring-pink-200 enabled:hover:bg-gradient-to-l',
+					'bg-gradient-to-tr from-pink-500 to-orange-400 focus:ring-pink-200 enabled:hover:bg-gradient-to-l dark:focus:ring-pink-800',
 				greenToBlue:
-					'bg-gradient-to-tr from-green-400 to-cyan-600 focus:ring-green-200 enabled:hover:bg-gradient-to-l',
+					'bg-gradient-to-tr from-green-400 to-cyan-600 focus:ring-green-200 enabled:hover:bg-gradient-to-l dark:focus:ring-green-800',
 				purpleToPink:
-					'bg-gradient-to-tr from-purple-500 via-purple-600 to-pink-500 focus:ring-purple-200 enabled:hover:bg-gradient-to-l',
+					'bg-gradient-to-tr from-purple-500 via-purple-600 to-pink-500 focus:ring-purple-200 enabled:hover:bg-gradient-to-l dark:focus:ring-purple-800',
 				redToYellow:
-					'bg-gradient-to-tr from-red-200 via-red-300 to-yellow-200 text-gray-900 enabled:hover:bg-gradient-to-bl',
+					'bg-gradient-to-tr from-red-200 via-red-300 to-yellow-200 text-gray-900 enabled:hover:bg-gradient-to-bl dark:focus:ring-red-400',
 			},
 			size: {
 				default: 'px-4 py-2 text-sm',

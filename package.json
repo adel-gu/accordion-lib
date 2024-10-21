@@ -14,7 +14,7 @@
     "dev:web": "nx dev @mini-react-ui/website",
     "dev:storybook": "nx storybook @mini-react-ui/storybook",
     "dev:ui": "nx dev @mini-react-ui/ui",
-    "start": "nx preview @mini-react-ui/website",
+    "dev": "nx run-many -t dev",
     "chromatic": "nx chromatic @mini-react-ui/storybook",
     "format:ui:check": "nx format:check @mini-react-ui/ui",
     "format:ui": "nx format @mini-react-ui/ui",
